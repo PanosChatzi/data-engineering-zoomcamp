@@ -29,6 +29,16 @@ parse_dates = [
     "tpep_dropoff_datetime"
 ]
 
+import click
+
+@click.command()
+@click.option('--user', default='root', help='PostgreSQL user')
+@click.option('--password', default='root', help='PostgreSQL password')
+@click.option('--host', default='localhost', help='PostgreSQL host')
+@click.option('--port', default=5432, type=int, help='PostgreSQL port')
+@click.option('--db', default='ny_taxi', help='PostgreSQL database name')
+@click.option('--table', default='yellow_taxi_data', help='Target table name')
+
 
 def ingest_data(
         url: str,
