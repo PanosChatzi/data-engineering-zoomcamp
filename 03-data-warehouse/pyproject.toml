@@ -1,0 +1,21 @@
+[project]
+name = "03-data-warehouse"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "dlt[bigquery,duckdb,gs]>=1.21.0",
+    "google>=3.0.0",
+    "google-auth>=2.48.0",
+    "google-auth-oauthlib>=1.2.4",
+    "google-cloud-bigquery>=3.40.0",
+    "google-cloud-storage>=3.9.0",
+    "pandas>=3.0.0",
+]
+
+[dependency-groups]
+dev = [
+    "jupyter>=1.1.1",
+    "python-dotenv>=1.2.1",
+]
