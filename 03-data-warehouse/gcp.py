@@ -19,8 +19,11 @@ client = storage.Client.from_service_account_json(CREDENTIALS_FILE)
 client = storage.Client(project='ny-taxi-trips-485416')
 
 
-BASE_URL = "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-"
-MONTHS = [f"{i:02d}" for i in range(1, 7)]
+# BASE_URL = "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2020-"
+BASE_URL = "https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata_2019-"
+# BASE_URL = "https://github.com/DataTalksClub/nyc-tlc-data/releases/download/fhv/fhv_tripdata_2019-"
+
+MONTHS = [f"{i:02d}" for i in range(1, 13)]
 DOWNLOAD_DIR = "."
 
 CHUNK_SIZE = 8 * 1024 * 1024
@@ -31,8 +34,11 @@ bucket = client.bucket(BUCKET_NAME)
 
 
 def download_file(month):
-    url = f"{BASE_URL}{month}.parquet"
-    file_path = os.path.join(DOWNLOAD_DIR, f"yellow_tripdata_2024-{month}.parquet")
+    url = f"{BASE_URL}{month}.csv.gz"
+    # url = f"{BASE_URL}{month}.parquet"
+    # file_path = os.path.join(DOWNLOAD_DIR, f"fhv_tripdata_2019-{month}.csv.gz")
+    file_path = os.path.join(DOWNLOAD_DIR, f"green_tripdata_2019-{month}.csv.gz")
+    # file_path = os.path.join(DOWNLOAD_DIR, f"green_tripdata_2020-{month}.parquet")
 
     try:
         print(f"Downloading {url}...")

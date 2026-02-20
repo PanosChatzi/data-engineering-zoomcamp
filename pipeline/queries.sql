@@ -120,7 +120,7 @@ JOIN public.zones zdo
     ON t."DOLocationID" = zdo."LocationID"
 WHERE zpu."Zone" = 'East Harlem North'
   AND t.lpep_pickup_datetime >= TIMESTAMP '2025-11-01'
-  AND t.lpep_pickup_datetime <  TIMESTAMP '2git 025-12-01'
+  AND t.lpep_pickup_datetime <  TIMESTAMP '2025-12-01'
 ORDER BY t.tip_amount DESC
 LIMIT 1; --Yorkville West
 
