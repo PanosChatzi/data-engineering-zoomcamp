@@ -1,0 +1,12 @@
+uv run spark_sql.py \
+    --input_green=code/data/pq/green/2020/* \
+    --input_yellow=code/data/pq/yellow/2020/* \
+    --output=code/data/report-2020
+
+spark-submit \
+    --master"${URL}" \
+    spark_sql.py \
+    --input_green=code/data/pq/green/2020/* \
+    --input_yellow=code/data/pq/yellow/2020/* \
+    --output=code/data/report-2020
+    
