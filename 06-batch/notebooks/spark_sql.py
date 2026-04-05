@@ -73,7 +73,7 @@ df_yellow_sel = df_yellow \
 
 df_trips_data = df_green_sel.unionAll(df_yellow_sel)
 
-df_trips_data.registerTempTable('trips_data')
+df_trips_data.createOrReplaceTempView('trips_data')
 
 
 df_result = spark.sql("""
